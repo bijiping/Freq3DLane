@@ -65,3 +65,70 @@ The data folders are organized as follows:
 |               └── merge_split_case
 |               └── The corresponding 6 txt files...
 ```
+## Pretrained Models
+ All models are uploaded to [<span style="color: blue;">Baidu Drive: Click on the link below / Enter the website below</span>]
+
+| Dataset | Pretrained | Metrics | website | filename |
+|--------| - |--------| - |-----|
+| Apollo | [Baidu Drive](https://pan.baidu.com/s/1KN9BiC9gY4AUjiorCb0Qhg?pwd=1234) | F1=98.4 | https://pan.baidu.com/s/1KN9BiC9gY4AUjiorCb0Qhg?pwd=1234 | freq3dlane_apollo.pth |
+| OpenLane-1000 | [Baidu Drive](https://pan.baidu.com/s/1H5Dn8GKiLFUlIn5l0X-taA?pwd=1234) | F1=59.7 | https://pan.baidu.com/s/1H5Dn8GKiLFUlIn5l0X-taA?pwd=1234 | freq3dlane_openlane.pth |
+
+
+## Benchmark
+
+### OpenLane1000
+
+| Method          | F-Score | X error  near | X error far | Z error near | Z error far |
+|-----------------|---------|---------------|-------------|--------------|-------------|
+| 3DLaneNet       | 44.1    | 0.479         | 0.572       | 0.367        | 0.443       |
+| GenLaneNet      | 32.3    | 0.591         | 0.684       | 0.411        | 0.521       |
+| PersFormer      | 50.5    | 0.485         | 0.553       | 0.364        | 0.431       | 
+| CurveFormer     | 50.5    | 0.340         | 0.772       | 0.207        | 0.651       |
+| CurveFormer++   | 52.7    | 0.337         | 0.801       | 0.198        | 0.676       |
+| Anchor3DLane    | 50.5    | 0.300         | 0.311       | 0.103        | 0.139       |
+| BEV-LaneDet     | 58.4    | 0.309         | 0.659       | 0.244        | 0.631       | 
+| **Freq-3DLane** | 59.7    | 0.265         | 0.665       | 0.196        | 0.608       | 
+
+
+###  Apollo 3D Lane Synthetic (Balanced Scence)
+
+| Method               | F-Score | X error  near | X error far | Z error near  | Z error far |
+|----------------------|---------|---------------|-------------|---------------|-------------|
+| 3D-LaneNet           | 86.4    | 0.068         | 0.477       | 0.015         | 0.202       |
+| Gen-LaneNet          | 88.1    | 0.061         | 0.486       | 0.012         | 0.214       |
+| CLGO                 | 91.9    | 0.061         | 0.361       | 0.029         | 0.250       |
+| Reconstruct from Top | 91.9    | 0.049         | 0.387       | 0.008         | 0.213        |
+| PersFormer           | 92.9    | 0.054         | 0.356       | 0.010         | 0.234       |
+| CurveFormer          | 95.8    | 0.078         | 0.326       | 0.018         | 0.219       |
+| Anchor3DLane         | 95.6    | 0.052         | 0.306       | 0.015         | 0.223       |
+| BEV-LaneDet          | 96.9    | 0.016         | 0.242       | 0.020         | 0.216       | 
+| **Freq-3DLane**      | 98.4    | 0.021         | 0.200       | 0.022         | 0.208       |
+
+
+## Visualization
+We represent the visualization results of Anchor3DLane on ApolloSim and OpenLane1000 datasets.
+
+* Visualization results on ApolloSim dataset.
+![apollo](images/apollo.png)
+
+* Visualization results on OpenLane1000 dataset.
+![openlane](images/openlane.png)
+
+
+## Acknowledgment
+
+This library is inspired by [BEVLaneDet](https://github.com/gigo-team/bev_lane_det), [FreqFusion](https://github.com/Linwei-Chen/FreqFusion), [Anchor3DLane](https://github.com/tusen-ai/Anchor3DLane), [LATR](https://github.com/JMoonr/LATR), [OpenLane](https://github.com/OpenDriveLab/PersFormer_3DLane),  [GenLaneNet](https://github.com/yuliangguo/Pytorch_Generalized_3D_Lane_Detection) and many other related works, we thank them for sharing the code and datasets.
+
+# Citation
+If you find this repo useful for your research, please cite
+```
+@ARTICLE{freq3dlane,
+  author={Song, Yongchao and Bi, Jiping and Sun, Lijun and Liu, Zhaowei and Jiang, Yahong and Wang, Xuan},
+  journal={IEEE Transactions on Intelligent Transportation Systems}, 
+  title={Freq-3DLane: 3D Lane Detection From Monocular Images via Frequency-Aware Feature Fusion}, 
+  year={2025},
+  volume={26},
+  number={9},
+  pages={12974-12986},
+  doi={10.1109/TITS.2025.3565272}}
+```
