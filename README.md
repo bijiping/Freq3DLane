@@ -26,7 +26,7 @@ conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.1 -c pytorch -y
 
 #### **Step 2.** Install Freq3DLane
 ```
-git clone https://github.com/bijiping/Freq3Dlane.git
+git clone https://github.com/bijiping/Freq3DLane.git
 cd Freq3DLane
 pip install -r requirements.txt
 ```
