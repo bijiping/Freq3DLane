@@ -38,7 +38,6 @@ pip install -r requirements.txt
 - Please refer to [Apollo 3D Lane Synthetic](https://github.com/yuliangguo/3D_Lane_Synthetic_Dataset) for downloading Apollo 3D Lane Synthetic Dataset. For example: download OpenLane dataset to /Dataset/Apollosim
 - Please refer to [OpenLane](https://github.com/OpenPerceptionX/OpenLane) for downloading OpenLane Dataset. For example: download OpenLane dataset to /Dataset/OpenLane
 
-
 The data folders are organized as follows:
 ```
 ├── Dataset/
@@ -65,6 +64,9 @@ The data folders are organized as follows:
 |               └── merge_split_case
 |               └── The corresponding 6 txt files...
 ```
+
+
+
 ## Pretrained Models
  All models are uploaded to [<span style="color: blue;">Baidu Drive: Click on the link below / Enter the website below</span>]
 
@@ -72,6 +74,43 @@ The data folders are organized as follows:
 |--------| - |--------| - |-----|
 | Apollo | [Baidu Drive](https://pan.baidu.com/s/1KN9BiC9gY4AUjiorCb0Qhg?pwd=1234) | F1=98.4 | https://pan.baidu.com/s/1KN9BiC9gY4AUjiorCb0Qhg?pwd=1234 | freq3dlane_apollo.pth |
 | OpenLane-1000 | [Baidu Drive](https://pan.baidu.com/s/1H5Dn8GKiLFUlIn5l0X-taA?pwd=1234) | F1=59.7 | https://pan.baidu.com/s/1H5Dn8GKiLFUlIn5l0X-taA?pwd=1234 | freq3dlane_openlane.pth |
+
+
+### Training and evaluation on OpenLane
+- Please refer to [OpenLane](https://github.com/OpenPerceptionX/OpenLane) for downloading OpenLane Dataset. For example: download OpenLane dataset to /dataset/openlane
+
+- How to train:
+    1. Please modify the configuration in the /tools/openlane_config.py
+    2. Execute the following code:
+```
+cd tools
+python train_openlane.py
+```
+- How to evaluation:
+    1. Please modify the configuration in the /tools/val_openlane.py
+    2. Execute the following code:
+```
+cd tools
+python val_openlane.py
+```
+
+### Training and evaluation on Apollo 3D Lane Synthetic
+- Please refer to [Apollo 3D Lane Synthetic](https://github.com/yuliangguo/3D_Lane_Synthetic_Dataset) for downloading Apollo 3D Lane Synthetic Dataset. For example: download OpenLane dataset to /dataset/apollo
+
+- How to train:
+    1. Please modify the configuration in the /tools/apollo_config.py
+    2. Execute the following code:
+```
+cd tools
+python train_apollo.py
+```
+- How to evaluation:
+    1. Please modify the configuration in the /tools/val_apollo.py
+    2. Execute the following code:
+```
+cd tools
+python val_apollo.py
+```
 
 
 ## Benchmark
@@ -106,7 +145,7 @@ The data folders are organized as follows:
 
 
 ## Visualization
-We represent the visualization results of Anchor3DLane on ApolloSim and OpenLane1000 datasets.
+We represent the visualization results of Freq-3DLane on ApolloSim and OpenLane1000 datasets.
 
 * Visualization results on ApolloSim dataset.
 ![apollo](images/apollo.png)
