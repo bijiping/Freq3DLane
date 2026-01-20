@@ -1,0 +1,25 @@
+torch==1.10.0+cu111
+torchvision==0.11.0+cu111
+torchaudio==0.10.0
+-f https://download.pytorch.org/whl/torch_stable.html
+
+numpy==1.21.6
+
+mmcv-full==1.5.3 
+-f https://download.openmmlab.com/mmcv/dist/cu111/torch1.10.0/index.html 
+
+albumentations==1.1.0
+pandas==1.1.5
+scipy==1.10.0
+opencv-contrib-python==4.9.0.80
+opencv-python-headless==4.10.0.84
+open3d==0.15.2
+scikit-build==0.14.1
+scikit-image==0.24.0
+scikit-learn==1.5.1
+scipy==1.11.0
+matplotlib==3.3.4
+ortools==9.3.10497
+importlib-metadata==8.5.0
+importlib-resources==6.1.1
+tqdm==4.64.0
