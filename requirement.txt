@@ -10,14 +10,13 @@ mmcv-full==1.5.3
 
 albumentations==1.1.0
 pandas==1.1.5
-scipy==1.10.0
+scipy==1.11.0
 opencv-contrib-python==4.9.0.80
 opencv-python-headless==4.10.0.84
 open3d==0.15.2
 scikit-build==0.14.1
 scikit-image==0.24.0
 scikit-learn==1.5.1
-scipy==1.11.0
 matplotlib==3.3.4
 ortools==9.3.10497
 importlib-metadata==8.5.0
