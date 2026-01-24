@@ -22,13 +22,14 @@ To run our code, make sure you are using a machine with at least one GPU. Setup 
 conda create -n freq3dlane python=3.9 -y
 conda activate freq3dlane
 conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.1 -c pytorch -y
+pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 #### **Step 2.** Install Freq3DLane
 ```
 git clone https://github.com/bijiping/Freq3DLane.git
 cd Freq3DLane
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 
