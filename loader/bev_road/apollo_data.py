@@ -81,7 +81,7 @@ class Apollo_dataset_with_offset(Dataset):
             base_points = np.linspace(x.min(), x.max(),
                                       int((x.max() - x.min()) // 0.05))  # 画 offset 用得 画的非常细 一个格子里面20个点
             base_points_bin = np.linspace(int(x.min()), int(x.max()),
-                                          int(int(x.max()) - int(x.min()))+1)  # .astype(np.int)
+                                          int(int(x.max()) - int(x.min()))+1)  # .astype(int)
             # print(len(x),len(y),len(y))
             if len(x) == len(set(x)):
                 if len(x) <= 1:
@@ -123,12 +123,11 @@ class Apollo_dataset_with_offset(Dataset):
             y_points = function1(base_points)
             y_points_bin = function1(base_points_bin)
             z_points = function2(base_points)
-            # cv2.polylines(instance_seg, [ipm_points.T.astype(np.int)], False, idx+1, 1)
+            # cv2.polylines(instance_seg, [ipm_points.T.astype(int)], False, idx+1, 1)
             res_lane_points[idx] = np.array([base_points, y_points])  # 
             res_lane_points_z[idx] = np.array([base_points, z_points])
-            res_lane_points_bin[idx] = np.array([base_points_bin, y_points_bin]).astype(np.int)  # 画bin用的
-            res_lane_points_set[idx] = np.array([base_points, y_points]).astype(
-                np.int)  
+            res_lane_points_bin[idx] = np.array([base_points_bin, y_points_bin]).astype(int)  # 画bin用的
+            res_lane_points_set[idx] = np.array([base_points, y_points]).astype(int)  
         offset_map = np.zeros((self.ipm_h, self.ipm_w))
         z_map = np.zeros((self.ipm_h, self.ipm_w))
         ipm_image = np.zeros((self.ipm_h, self.ipm_w))
@@ -187,7 +186,7 @@ class Apollo_dataset_with_offset(Dataset):
             lane_image = camera_k @ lane_camera[:3]
             lane_image = lane_image / lane_image[2]
             lane_uv = lane_image[:2].T
-            cv2.polylines(image_gt, [lane_uv.astype(np.int)], False, lane_idx + 1, 3)
+            cv2.polylines(image_gt, [lane_uv.astype(int)], False, lane_idx + 1, 3)
             x, y, z = lane_ground[1], -1 * lane_ground[0], lane_ground[2]
             ground_points = np.array([x, y])
             ipm_points = np.linalg.inv(matrix_IPM2ego[:, :2]) @ (
