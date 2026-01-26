@@ -10,7 +10,7 @@ In this paper, we present Freq-3DLane, a simple yet effective end-to-end 3D lane
 
 ## News
 - [2025/04/24] Freq-3DLane is accepted by IEEE Transactions on Intelligent Transportation Systems.
-- [2025/04/24] Freq-3DLane has been published in the IEEE Transactions on Intelligent Transportation Systems with Early Access.
+- [2025/05/09] Freq-3DLane has been published in the IEEE Transactions on Intelligent Transportation Systems with Early Access.
 - [2025/09/16] Freq-3DLane has been officially published in the IEEE Transactions on Intelligent Transportation Systems.
 - [2026/01/19] We have open-sourced the source code of Freq-3DLane.
 
