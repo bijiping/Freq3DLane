@@ -141,8 +141,6 @@ def val():
         image,bn_name = item
         image = image.cuda()
 
-        # 每批次开始处理
-        start_time = time.time()
 
         with torch.no_grad():
             pred_ = model(image)[0]
@@ -158,20 +156,6 @@ def val():
                                          bn_name[0][idx] + '__' + bn_name[1][idx].replace('json', 'np'))
                 np.save(save_path, tmp_res_for_save)
 
-        # End time for batch processing
-        end_time = time.time()
-
-        # Calculate time taken for this batch
-        batch_time = end_time - start_time
-        total_time += batch_time
-
-        # Update total frames processed
-        total_frames += image.shape[0]  # image.shape[0] is the batch size
-
-    # Calculate FPS: total frames / total time taken
-    fps = total_frames / total_time
-    print(f"FPS: {fps:.2f}")
-    print(fps)
 
     ''' get postprocess result and save '''
     postprocess = PostProcessDataset(np_save_path, res_save_path, gt_paths)
